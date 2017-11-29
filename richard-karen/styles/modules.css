@@ -1,0 +1,107 @@
+h1 {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 35px;
+  margin-left: 10px;
+}
+
+h2 {
+  font-family: Arial;
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+nav ul {
+  margin-top: 180px;
+  list-style: none;
+}
+
+nav ul li{
+  display: none;
+  margin-bottom: 10px;
+}
+
+nav ul li a {
+  font-family: Arial;
+  text-decoration: none;
+  font-size: 30px;
+  color: #666;
+}
+
+.site-header {
+  padding-bottom: 10px;
+}
+
+.main-nav {
+  display:block;
+  background-color: #ffeaaa
+}
+
+.main-nav:hover ul li{
+  display: block;
+}
+
+.heading-group-h1 {
+  position: absolute;
+  background-color: #ffeaaa;
+}
+
+.byline {
+  font-family: Arial;
+  font-size: 18px;
+  color: #666;
+  margin-left: 10px;
+}
+
+.byline address {
+  display:inline;
+}
+.byline address a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #666;
+}
+
+.main-nav div {
+  position: absolute;
+  top:0;
+  right:0;
+  font-size: 40px;
+}
+
+.article-body p{
+  font-family: Arial;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  line-height: 30px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+article.template {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .icon-menu {
+    display: none;
+  }
+
+  .main-nav ul li {
+    margin-top: -20px;
+    margin-right: 20px;
+    display: block;
+    float: left;
+  }
+
+  .site-header {
+    height: 200px;
+  }
+}
