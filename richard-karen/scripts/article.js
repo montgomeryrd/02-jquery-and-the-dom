@@ -59,10 +59,10 @@ rawData.sort(function(a,b) {
 //articles.push(rawData.forEach(new Article()));
 //For each rawData, push to articles array
 for(let i = 0; i < rawData.length; i++) {
- articles.push(new Article(rawData[i]));
+  articles.push(new Article(rawData[i]));
 }
 
 //$('#articles').append(articles.forEach.toHtml()); //For each articles, append to HTML
 for(let i = 0; i < articles.length; i++) {
-$('#articles').append(articles[i].toHtml());
+  $('#articles').append(articles[i].toHtml());
 }
