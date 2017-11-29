@@ -1,7 +1,7 @@
 'use strict';
 
 // COMMENT: How is this data utilized within our blog app? What is the structure of this data (your response should include the terms "object", "array", and "key/value pairs")?
-// PUT YOUR RESPONSE HERE
+// This is an array of object literals with key/value pairs containing the properties title, category, author, authorUrl, publishedOn, and body. We will run the array of objects through an object constructor and push into a new array called 'articles' to be appended to the HTML.
 
 let rawData = [
   {

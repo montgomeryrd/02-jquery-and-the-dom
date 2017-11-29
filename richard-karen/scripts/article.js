@@ -21,7 +21,7 @@ Article.prototype.toHtml = function() {
   // Cloning copies the set of matched elements as well as all of their descendant elements and text nodes.
 
   let $newArticle = $('article.template').clone();
-  /* TODONE?: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
+  /* TODONE: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
 
   $newArticle.removeClass('template');
 
@@ -40,29 +40,33 @@ Article.prototype.toHtml = function() {
   $newArticle.find('address').text(this.author);
   $newArticle.attr('href', this.authorUrl);
   $newArticle.find('time').text(this.publishedOn);
-  $newArticle.find('.article-body').text(this.body);
+  $newArticle.find('.article-body').append(this.body);
 
 
-  // REVIEWed: Display the date as a relative number of 'days ago'
+  // REVIEWED: Display the date as a relative number of 'days ago'
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
   $newArticle.append('<hr>');
   return $newArticle;
 };
 
 rawData.sort(function(a,b) {
-  // REVIEWed: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
+  // REVIEWED: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
-// TODONE?: Refactor these for loops using the .forEach() array method.
+// TODONE: Refactor these for loops using the .forEach() array method.
 
-//articles.push(rawData.forEach(new Article()));
+rawData.forEach(function(article){
+  articles.push(new Article(article));
+});
 //For each rawData, push to articles array
-for(let i = 0; i < rawData.length; i++) {
-  articles.push(new Article(rawData[i]));
-}
+//for(let i = 0; i < rawData.length; i++) {
+//  articles.push(new Article(rawData[i]));
+//}
 
-//$('#articles').append(articles.forEach.toHtml()); //For each articles, append to HTML
-for(let i = 0; i < articles.length; i++) {
-  $('#articles').append(articles[i].toHtml());
-}
+articles.forEach(function(someRandomName){
+  $('#articles').append(someRandomName.toHtml());
+});
+// for(let i = 0; i < articles.length; i++) {
+//  $('#articles').append(articles[i].toHtml());
+//}
